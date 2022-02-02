@@ -169,7 +169,7 @@
                     <td>
                         <form>
                             <input type="hidden" name="restaurant-id" class="restaurant-id" />
-                            <button type="submit" class="btn btn-primary">Выбрать</button>
+                            <button type="button" class="btn btn-primary btn-choose">Выбрать</button>
                         </form>
                     </td>
                 </tr>
@@ -192,188 +192,16 @@
     <div class="container border-top mt-4">
         <h2 class="text-center" id="menu">Меню</h2>
         <div class="row row-cols-1 row-cols-md-3 g-4">
-            <div class="col">
+            <div class="col cart d-none">
                 <div class="card text-center">
-                    <img src="images/maco.jpg" class="card-img-top" alt="..." style="height: 300px;" />
+                    <img src="." class="card-img-top" alt="" style="height: 300px;">
                     <div class="card-header py-2">
-                        <h4 class="my-0 fw-normal">Макароны</h4>
+                        <h4 class="my-0 fw-normal name-set"></h4>
                     </div>
                     <div class="card-body">
-                        <p class="fs-5">
-                            Вкусные рожки
+                        <p class="fs-5 description">
                         </p>
-                        <h5 class="card-title pricing-card">100 Рублей</h5>
-                        <div class="d-flex justify-content-around mt-4">
-                            <button type="button" class="btn btn-outline-primary btn-minus">-</button>
-                            <span class="fs-3 countSpan">0</span>
-                            <button type="button" class="btn btn-outline-primary btn-plus">+</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card text-center">
-                    <img src="images/plov.jpg" class="card-img-top" alt="..." style="height: 300px;" />
-                    <div class="card-header py-2">
-                        <h4 class="my-0 fw-normal">Плов</h4>
-                    </div>
-                    <div class="card-body">
-                        <p class="fs-5">
-                            Вкусный, мощный, из барашка
-                        </p>
-                        <h5 class="card-title pricing-card">100 Рублей</h5>
-                        <div class="d-flex justify-content-around mt-4">
-                            <button type="button" class="btn btn-outline-primary btn-minus">-</button>
-                            <span class="fs-3 countSpan">0</span>
-                            <button type="button" class="btn btn-outline-primary btn-plus">+</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card text-center">
-                    <img src="images/Borshh.jpg" class="card-img-top" alt="..." style="height: 300px;" />
-                    <div class="card-header py-2">
-                        <h4 class="my-0 fw-normal">Борщ</h4>
-                    </div>
-                    <div class="card-body">
-                        <p class="fs-5">
-                            Со сметанкой от бабушки
-                        </p>
-                        <h5 class="card-title pricing-card">100 Рублей</h5>
-                        <div class="d-flex justify-content-around mt-4">
-                            <button type="button" class="btn btn-outline-primary btn-minus">-</button>
-                            <span class="fs-3 countSpan">0</span>
-                            <button type="button" class="btn btn-outline-primary btn-plus">+</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card text-center">
-                    <img src="images/kotleta.jpg" class="card-img-top" alt="..." style="height: 300px;" />
-                    <div class="card-header py-2">
-                        <h4 class="my-0 fw-normal">Пюре с котлетой</h4>
-                    </div>
-                    <div class="card-body">
-                        <p class="fs-5">
-                            Прям как в детве бабушка готовила
-                        </p>
-                        <h5 class="card-title pricing-card">100 Рублей</h5>
-                        <div class="d-flex justify-content-around mt-4">
-                            <button type="button" class="btn btn-outline-primary btn-minus">-</button>
-                            <span class="fs-3 countSpan">0</span>
-                            <button type="button" class="btn btn-outline-primary btn-plus">+</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card text-center">
-                    <img src="images/Syp.jpg" class="card-img-top" alt="..." style="height: 300px;" />
-                    <div class="card-header py-2">
-                        <h4 class="my-0 fw-normal ">Куриный супчик</h4>
-                    </div>
-                    <div class="card-body">
-                        <p class="fs-5">
-                            Помогает переболеть ковидом
-                        </p>
-                        <h5 class="card-title pricing-card">100 Рублей</h5>
-                        <div class="d-flex justify-content-around mt-4">
-                            <button type="button" class="btn btn-outline-primary btn-minus">-</button>
-                            <span class="fs-3 countSpan">0</span>
-                            <button type="button" class="btn btn-outline-primary btn-plus">+</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card text-center">
-                    <img src="images/wawlyk.jpg" class="card-img-top" alt="..." style="height: 300px;" />
-                    <div class="card-header py-2">
-                        <h4 class="my-0 fw-normal text-center">Шашлык</h4>
-                    </div>
-                    <div class="card-body">
-                        <p class="fs-5">
-                            Готовил сам Кадыров
-                        </p>
-                        <h5 class="card-title pricing-card">100 Рублей</h5>
-                        <div class="d-flex justify-content-around mt-4">
-                            <button type="button" class="btn btn-outline-primary btn-minus">-</button>
-                            <span class="fs-3 countSpan">0</span>
-                            <button type="button" class="btn btn-outline-primary btn-plus">+</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card text-center">
-                    <img src="images/burger.jpg" class="card-img-top" alt="..." style="height: 300px;" />
-                    <div class="card-header py-2">
-                        <h4 class="my-0 fw-normal text-center">Биг бургер</h4>
-                    </div>
-                    <div class="card-body">
-                        <p class="fs-5">
-                            Больше чем двойной Биг Тейсти
-                        </p>
-                        <h5 class="card-title pricing-card">100 Рублей</h5>
-                        <div class="d-flex justify-content-around mt-4">
-                            <button type="button" class="btn btn-outline-primary btn-minus">-</button>
-                            <span class="fs-3 countSpan">0</span>
-                            <button type="button" class="btn btn-outline-primary btn-plus">+</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card text-center">
-                    <img src="images/waverma.jpg" class="card-img-top" alt="..." style="height: 300px;" />
-                    <div class="card-header py-2">
-                        <h4 class="my-0 fw-normal">Шаверма</h4>
-                    </div>
-                    <div class="card-body">
-                        <p class="fs-5">
-                            Скажи спасибо, что не из кошки
-                        </p>
-                        <h5 class="card-title pricing-card">100 Рублей</h5>
-                        <div class="d-flex justify-content-around mt-4">
-                            <button type="button" class="btn btn-outline-primary btn-minus">-</button>
-                            <span class="fs-3 countSpan">0</span>
-                            <button type="button" class="btn btn-outline-primary btn-plus">+</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card text-center">
-                    <img src="images/assorti.jpg" class="card-img-top" alt="..." style="height: 300px;" />
-                    <div class="card-header py-2">
-                        <h4 class="my-0 fw-normal">Асорти</h4>
-                    </div>
-                    <div class="card-body">
-                        <p class="fs-5">
-                            Под пивко, самое то
-                        </p>
-                        <h5 class="card-title pricing-card">100 Рублей</h5>
-                        <div class="d-flex justify-content-around mt-4">
-                            <button type="button" class="btn btn-outline-primary btn-minus">-</button>
-                            <span class="fs-3 countSpan">0</span>
-                            <button type="button" class="btn btn-outline-primary btn-plus">+</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card text-center">
-                    <img src="images/vareniki.jpg" class="card-img-top" alt="..." style="height: 300px;" />
-                    <div class="card-header py-2">
-                        <h4 class="my-0 fw-normal">Вареники</h4>
-                    </div>
-                    <div class="card-body">
-                        <p class="fs-5">
-                            Лепила бабушка, варил Владимир Владимирович
-                        </p>
-                        <h5 class="card-title pricing-card">100 Рублей</h5>
+                        <h5 class="card-title pricing-card"></h5> <h5>Рублей</h5>
                         <div class="d-flex justify-content-around mt-4">
                             <button type="button" class="btn btn-outline-primary btn-minus">-</button>
                             <span class="fs-3 countSpan">0</span>
@@ -409,7 +237,7 @@
         <div class="d-md-flex justify-content-between align-items-center py-3">
             <strong>
                 <span class="align-middle"> Итого </span>
-                <span class="align-middle"> 0 </span>
+                <span class="align-middle count-order"> 0 </span>
                 <span class="align-middle"> Рублей </span>
             </strong>
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cartModal">
@@ -538,10 +366,13 @@
                         </div>
                     </form>
                     <div class="row mb-4 mt-5">
-                        <div class="col-lg-4">
-                            <h4>Итого:</h4>
+                        <div class="col-lg">
+                            <h4 >Итого:</h4>
                         </div>
-                        <div class="col-lg-8">
+                        <div class="col-lg">
+                            <h4 class="count-order"></h4>
+                        </div>
+                        <div class="col-lg">
                             <h4>руб.</h4>
                         </div>
                     </div>
