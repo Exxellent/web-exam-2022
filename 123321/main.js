@@ -145,7 +145,6 @@ function checkoption() {
     if (option1.checked) {CoOrder.innerHTML *=1.2}
     if (option2.checked && selectedRestaurant.socialPrivileges){CoOrder.innerHTML *= 1-(selectedRestaurant.socialDiscount/100)}
     else if ((!option1.checked && !option2.checked)) countOrder();
-    
 }
 
 
@@ -154,7 +153,7 @@ function checkoption() {
 
 
 async function getSet() {
-    let response = await fetch("http://external.std-1611.ist.mospolytech.ru/set.json");
+    let response = await fetch("http://161.97.92.112:30004/api/sets");
     let json = await response.json();
     return json;
 }
