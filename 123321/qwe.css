@@ -1,3 +1,20 @@
-thead {
-    background-color: #fde910;
+.alert {
+    position:fixed; 
+    top: 0px; 
+    left: 0px; 
+    width: 100%;
+    z-index:9999; 
+    border-radius:0px
+}
+
+.carousel-item img {
+    /* max-height: 400px; */
+    object-fit: cover;
+    max-height: 700px;
+    
+    /* max-width: 400px; */
+}
+.card img {
+    
+    height: 300px;
 }

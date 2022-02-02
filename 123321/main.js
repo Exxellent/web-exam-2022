@@ -139,11 +139,19 @@ function countOrder() {
 
 function checkoption() {
     countOrder();
-    let CoOrder = document.querySelector(".count-order");
+    let CoOrder = document.querySelectorAll(".count-order");
     let option1 = document.getElementById("faster-delivery");
     let option2 = document.getElementById("soc-disc");
-    if (option1.checked) {CoOrder.innerHTML *=1.2}
-    if (option2.checked && selectedRestaurant.socialPrivileges){CoOrder.innerHTML *= 1-(selectedRestaurant.socialDiscount/100)}
+    if (option1.checked) {
+        for (let i of CoOrder){
+            i.innerHTML *=1.2;
+        }
+    }
+    if (option2.checked && selectedRestaurant.socialPrivileges){
+        for (let i of CoOrder){
+            i.innerHTML *= 1-(selectedRestaurant.socialDiscount/100);
+        }
+    }
     else if ((!option1.checked && !option2.checked)) countOrder();
 }
 
@@ -173,6 +181,7 @@ function recordSet(records) {
     for (let i = 0; i < records.length; i++) {
        menu.append(createSet(records[i]));
     }
+
     for (let btn of document.querySelectorAll(".btn-plus")) {
         btn.onclick = countplus;
     }
@@ -188,6 +197,7 @@ function clearsets() {
         menu[i].remove();
     }
 }
+
 function setPrice(){
     let price = document.querySelectorAll(".pricing-card")
     setnum=0;
@@ -216,8 +226,46 @@ async function getRestById(id) {
 }
 
 
+function renderModalWindow () {
+    let window = document.querySelector(".modal-body");
+    let optCont = document.querySelector(".option-container");
+    optCont.innerHTML = "";
+
+    let firstoption = document.createElement("span")
+    firstoption.innerHTML = "Быстрая доставка";
+    if (document.getElementById("faster-delivery").checked) optCont.append(firstoption);
+
+    let secondoption = document.createElement("span")
+    secondoption.innerHTML = "Социальная скидка";
+    if (document.getElementById("soc-disc").checked) optCont.append(secondoption);
+
+    document.querySelector("#nameRest").innerHTML = selectedRestaurant.name;
+    document.querySelector("#auRest").innerHTML = selectedRestaurant.admArea;
+    document.querySelector("#districtRest").innerHTML = selectedRestaurant.district;
+    document.querySelector("#adressRest").innerHTML = selectedRestaurant.address;
+    document.querySelector("#rateRest").innerHTML = selectedRestaurant.rate;
+
+    let price = document.querySelector("#price-delivery").textContent;
+    window.querySelector(".count-order").innerHTML=document.querySelector(".count-order").innerHTML;
+
+    window.querySelector(".count-order").innerHTML-=-price;
+    
 
 
+}
+
+function alert(message, type) {
+    let alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+
+    let wrapper = document.createElement('div')
+    wrapper.innerHTML = '<div class="alert alert-' + type + ' alert-dismissible" role="alert">' + message + '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>'
+
+    alertPlaceholder.append(wrapper)
+}
+
+function confirm(){
+    alert("Заказ подтверждён", "success")
+}
 
 window.onload = function() {
     getRestaurants().then(renderRecords);
@@ -229,12 +277,7 @@ window.onload = function() {
         btn.onclick = chooseRest;
     }
 
+    document.querySelector(".btn-modal").onclick=renderModalWindow;
+    document.querySelector("#confirm-order").onclick=confirm;
+
 }
-
-
-
-
-
-
-
-
