@@ -3,6 +3,7 @@ let apiUrl =
     "http://exam-2022-1-api.std-900.ist.mospolytech.ru/api/restaurants";
 let restaurantsJson;
 let selectedRestaurant;
+let setsJson;
 
 
 async function getRestaurants() {
@@ -15,7 +16,7 @@ async function getRestaurants() {
 }
 
 function createRestaurantTableItem(record) {
-    let item = document.querySelector("#tr-template").cloneNode(true);
+    let item = document.querySelector("#table-row").cloneNode(true);
     item.classList.remove("d-none");
     item.querySelector(".restaurant-name").innerHTML = record.name;
     item.querySelector(".restaurant-type").innerHTML = record.typeObject;
@@ -104,14 +105,14 @@ function countplus(event) {
     let qwe = event.target.closest("div");    
     let count = qwe.querySelector('span')
     count.innerHTML++;
-    countOrder();
+    checkoption();
 }
 function countmin(event) {
     let qwe = event.target.closest("div");    
     let count = qwe.querySelector('span')
     if (count.innerHTML>0)
         count.innerHTML--;
-    countOrder();
+    checkoption();
 }
 
 
@@ -163,6 +164,7 @@ function checkoption() {
 async function getSet() {
     let response = await fetch("http://161.97.92.112:30004/api/sets");
     let json = await response.json();
+    setsJson=json;
     return json;
 }
 
@@ -228,6 +230,40 @@ async function getRestById(id) {
 
 function renderModalWindow () {
     let window = document.querySelector(".modal-body");
+    let card = window.querySelector(".card");
+    let count = [];
+    let sets = document.querySelectorAll(".cart");
+
+    let cardbd = card.querySelector(".card-body");
+
+    while (cardbd.children.length > 1) {
+        cardbd.removeChild(cardbd.lastChild);
+    }
+    for (let set of sets) {
+        count.push(set.querySelector("span").textContent);
+    }
+    console.log(setsJson);
+    for (let i = 1; i < count.length; i++) {
+        if (count[i] !=0){
+            let pos = window.querySelector("#pos-order").cloneNode(true);
+            pos.classList.remove("d-none");
+            pos.querySelector("img").src=setsJson[i-1].img;
+            pos.querySelector("#name-dish").innerHTML = setsJson[i-1].name;
+            pos.querySelector("#count-dish").innerHTML = count[i];
+            pos.querySelector("#price-dish").innerHTML = selectedRestaurant["set_"+i];
+            pos.querySelector("#count-price-dish").innerHTML = count[i]*selectedRestaurant["set_"+i];
+            cardbd.append(pos);
+        }
+    }
+
+    
+
+    
+
+
+
+
+
     let optCont = document.querySelector(".option-container");
     optCont.innerHTML = "";
 
